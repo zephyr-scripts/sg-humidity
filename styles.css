@@ -35,3 +35,10 @@ canvas {
   display: block;
   margin: 0 auto; /* Center the chart horizontally */
 }
+
+.chart-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto; /* ✅ Enable horizontal scroll if needed */
+  padding-bottom: 1rem;
+}
