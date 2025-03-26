@@ -24,6 +24,11 @@ async function fetchAndDisplayChart() {
     );
     const values = readings.map((reading) => reading.value);
 
+    // Dynamically resize canvas width based on number of stations
+    const widthPerBar = 80; // Adjust as needed for spacing
+    const chartWidth = labels.length * widthPerBar;
+    document.getElementById('humidityChart').style.width = `${chartWidth}px`;
+    
     new Chart(ctx, {
       type: "bar",
       data: {
