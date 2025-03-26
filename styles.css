@@ -39,6 +39,7 @@ canvas {
 .chart-container {
   width: 100%;
   max-width: 100%;
-  overflow-x: auto; /* ✅ Enable horizontal scroll if needed */
+  overflow-x: auto; /* Enable horizontal scroll if needed */
+  overflow-y: auto; /* Enable vertical scroll if needed */
   padding-bottom: 1rem;
 }
