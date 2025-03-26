@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relative Humidity in Singapore</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Singapore's Relative Humidity Now</h1>
+    <h2>Updated every 5mins so you know exactly how many tissue packs to bring out</h2>
+    <p id="timestamp">Data as of: --</p>
+    <p id="status" class="loading">Loading data...</p>
+    <canvas id="humidityChart"></canvas>
+      <ul id="humidity-list"></ul>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
