@@ -30,8 +30,7 @@ li {
 }
 
 canvas {
-  width: 60vw !important; /* 50% of the viewport width */
-  height: 80vh !important; /* Let Chart.js adjust height automatically */
+  height: 500px !important; /* Let Chart.js adjust height automatically */
   display: block;
   margin: 0 auto; /* Center the chart horizontally */
 }
