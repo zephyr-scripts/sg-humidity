@@ -2,6 +2,20 @@ Chart.register(ChartDataLabels);
 
 const url = "https://api-open.data.gov.sg/v2/real-time/api/relative-humidity";
 
+const customStationNames = {
+    "Ang Mo Kio Avenue 5": "Ang Mo Kio",
+    "Pulau Ubin": "Pulau Ubin",
+    "Banyan Road": "Jurong",
+    "Kim Chuan Road": "Bartley / Tai Seng",
+    "East Coast Parkway": "East Coast",
+    "Woodlands Avenue 9": "Woodlands",
+    "Tuas South Avenue 3": "Tuas",
+    "West Coast Highway": "West Coast",
+    "Scotts Road": "Orchard",
+    "Old Choa Chu Kang Road": "Choa Chu Kang",
+    "Clementi Road": "Clementi"
+};
+
 async function fetchAndDisplayChart() {
   const status = document.getElementById("status");
   const ctx = document.getElementById("humidityChart").getContext("2d");
@@ -12,6 +26,7 @@ async function fetchAndDisplayChart() {
 
     const readings = result.data?.readings[0]?.data || [];
     const stations = result.data?.stations || [];
+    console.log('All available stations:', stations.map(station => station.name));
 
     // Map station ID to name
     const stationMap = {};
@@ -19,9 +34,10 @@ async function fetchAndDisplayChart() {
       stationMap[station.id] = station.name;
     });
 
-    const labels = readings.map(
-      (reading) => stationMap[reading.stationId] || reading.stationId
-    );
+    const labels = readings.map(reading => {
+        const stationName = stationMap[reading.stationId];
+        return customStationNames[stationName] || stationName;
+    });
     const values = readings.map((reading) => reading.value);
 
     // Dynamically resize canvas width based on number of stations
