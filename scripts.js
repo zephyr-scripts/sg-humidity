@@ -49,6 +49,7 @@ async function fetchAndDisplayChart() {
         scales: {
           y: {
             beginAtZero: true,
+            max: 100,
             title: {
               display: true,
               text: "Humidity (%)",
@@ -98,8 +99,8 @@ async function fetchAndDisplayChart() {
             },
           },
           datalabels: {
-            anchor: "end",
-            align: "top",
+            anchor: "center",
+            align: "center",
             formatter: function (value) {
               return Math.floor(value) + "%";
             },
