@@ -13,7 +13,8 @@ const customStationNames = {
     "West Coast Highway": "West Coast",
     "Scotts Road": "Orchard",
     "Old Choa Chu Kang Road": "Choa Chu Kang",
-    "Clementi Road": "Clementi"
+    "Clementi Road": "Clementi",
+    "Upper Changi Road North": "Upper Changi"
 };
 
 async function fetchAndDisplayChart() {
