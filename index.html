@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relative Humidity in Singapore</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-[#cccccc] min-h-screen flex flex-col items-center justify-start py-10 px-2">
+    <div class="w-full max-w-5xl flex flex-col items-center">
+        <h1 class="text-4xl md:text-5xl font-light font-[Outfit,sans-serif] text-blue-900 mb-2 text-center tracking-wide drop-shadow-sm">Singapore's Relative Humidity Now</h1>
+        <h2 class="text-lg md:text-xl font-medium mb-6 text-center text-[#3d5497]">Updated every 5mins so you know exactly how many tissue packs to bring out</h2>
+        <p id="timestamp" class="text-gray-600 text-center mb-2">Data as of: --</p>
+        <p id="status" class="italic text-blue-600 text-center mb-4">Loading data...</p>
+        <div class="chart-container bg-white/80 rounded-2xl shadow-lg p-6 mb-8 w-full flex justify-center border border-blue-100">
+            <canvas id="humidityChart"></canvas>
+        </div>
+        <div id="map" class="rounded-2xl shadow-lg border border-blue-100 w-full max-w-4xl"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
