@@ -61,9 +61,11 @@ async function fetchAndDisplayChart() {
     const values = readingsWithLocation.map(({reading}) => reading.value);
 
     // Dynamically resize canvas width based on number of stations
-    const widthPerBar = 80; // Adjust as needed for spacing
+    const widthPerBar = 100; // Increased for better spacing on mobile
     const chartWidth = labels.length * widthPerBar;
-    document.getElementById('humidityChart').style.width = `${chartWidth}px`;
+    const canvas = document.getElementById('humidityChart');
+    canvas.width = chartWidth; // Set the drawing surface width
+    canvas.style.width = `${chartWidth}px`; // Set the CSS width
     
     new Chart(ctx, {
       type: "bar",
@@ -73,8 +75,8 @@ async function fetchAndDisplayChart() {
           {
             label: "Humidity (%)",
             data: values,
-            backgroundColor: "#b2d8d8", // pastel blue
-            borderColor: "#66b2b2", // soft indigo
+            backgroundColor: "#a5b4fc", // pastel blue
+            borderColor: "#6366f1", // soft indigo
             borderWidth: 1,
             borderRadius: 8,
             barPercentage: 0.7,
@@ -83,7 +85,7 @@ async function fetchAndDisplayChart() {
         ],
       },
       options: {
-        responsive: true,
+        responsive: false,
         maintainAspectRatio: false,
         layout: {
           padding: 20

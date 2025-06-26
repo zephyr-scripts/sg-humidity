@@ -8,5 +8,4 @@ canvas {
   height: 600px !important; /* Let Chart.js adjust height automatically */
   max-height: 80vh; /*prevent mobile overflow */
   display: block;
-  margin: 0 auto; /* Center the chart horizontally */
 }
