@@ -75,9 +75,9 @@ async function fetchAndDisplayChart() {
           {
             label: "Humidity (%)",
             data: values,
-            backgroundColor: "#a5b4fc", // pastel blue
-            borderColor: "#6366f1", // soft indigo
-            borderWidth: 1,
+            backgroundColor: "#66b2b2", // pastel blue
+            borderColor: "#2178F7", // soft indigo
+            borderWidth: 2,
             borderRadius: 8,
             barPercentage: 0.7,
             categoryPercentage: 0.7,
